@@ -1,0 +1,11 @@
+<div class="custom-container">
+    <div *ngFor="let pendingFriend of pendingFriends; index as i">
+        <div class="card card-margin custom-card-color">
+            <div class="card-header bg-info text-white">
+                <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+                <span style="margin-left:10px;font-size:20px;">{{pendingFriend.name}}</span>
+                <span style="margin-left:10px;float:right;"><button class="btn btn-warning" (click)="removeFriend(pendingFriend.id,i)">Cancel Friend Request</button></span>
+            </div>
+        </div>
+    </div>
+</div>

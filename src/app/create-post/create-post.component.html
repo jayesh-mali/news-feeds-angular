@@ -1,0 +1,53 @@
+<form [formGroup]="createPostForm">
+    <fieldset>
+        <legend>Post</legend>
+        <div class="form-group row">
+            <label for="title" class="col-sm-3 col-form-label">
+                Title
+            </label>
+            <div class="col-sm-5">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa fa-user"></i></div>
+                    </div>
+                    <input [ngClass]="{'is-invalid': isSubmitted && createPostForm.controls.title.errors}" formControlName="title"
+                        type="text" class="form-control" id="title" placeholder="Enter Title">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div *ngIf="isSubmitted && createPostForm.controls.title.errors && createPostForm.controls.title.errors.required"
+                    class="error">
+                    Title is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="description" class="col-sm-3 col-form-label">
+                Description
+            </label>
+            <div class="col-sm-5">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa fa-user"></i></div>
+                    </div>
+                    <textarea id="description" placeholder="Enter Description" [ngClass]="{'is-invalid': isSubmitted && createPostForm.controls.description.errors}"
+                        formControlName="description" rows="2" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div *ngIf="isSubmitted && createPostForm.controls.description.errors && createPostForm.controls.description.errors.required"
+                    class="error">
+                    Description is required.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group footer">
+            <div style="float:right;">
+                <button type="submit" class="btn btn-primary float-button" (click)="save()">Save</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

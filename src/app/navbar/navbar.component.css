@@ -1,0 +1,11 @@
+.nav-container{
+    margin: 65px 20px 0px 20px;
+}
+.custom-menu{
+    color: white;
+    cursor: pointer;
+}
+.custom-menu:hover{
+    color:yellow;
+    text-decoration: none;
+}

@@ -1,0 +1,10 @@
+.card-margin{
+    margin: 20px;
+}
+.custom-container{
+    margin-left:150px;
+    margin-right:150px;
+}
+.custom-card-color{
+    background-color: lightgray;
+}

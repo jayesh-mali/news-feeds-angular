@@ -1,0 +1,102 @@
+<form [formGroup]="signupForm">
+  <fieldset>
+    <legend>Signup</legend>
+
+    <div class="form-group row">
+      <label for="name" class="col-sm-3 col-form-label">
+        Name
+      </label>
+      <div class="col-sm-5">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fas fa fa-user"></i></div>
+          </div>
+          <input [ngClass]="{'is-invalid': isSubmitted && signupForm.controls.name.errors}" formControlName="name"
+            type="text" class="form-control" id="name" placeholder="Enter Name">
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div *ngIf="isSubmitted && signupForm.controls.name.errors && signupForm.controls.name.errors.required" class="error">
+          Name is required.
+        </div>
+        <div *ngIf="isSubmitted && signupForm.controls.name.errors && signupForm.controls.name.errors.name" class="error">
+          Name is invalid.
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label for="email" class="col-sm-3 col-form-label">
+        Email
+      </label>
+      <div class="col-sm-5">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fas fa fa-user"></i></div>
+          </div>
+          <input [ngClass]="{'is-invalid': isSubmitted && signupForm.controls.email.errors}" formControlName="email"
+            type="text" class="form-control" id="email" placeholder="Enter Email">
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div *ngIf="isSubmitted && signupForm.controls.email.errors && signupForm.controls.email.errors.required" class="error">
+          Email is required.
+        </div>
+        <div *ngIf="isSubmitted && signupForm.controls.email.errors && signupForm.controls.email.errors.email" class="error">
+          Email is invalid.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="password" class="col-sm-3 col-form-label">
+        Password
+      </label>
+      <div class="col-sm-5">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fas fa fa-user"></i></div>
+          </div>
+          <input [ngClass]="{'is-invalid': isSubmitted && signupForm.controls.password.errors}" formControlName="password"
+            type="password" class="form-control" id="password" placeholder="Enter Password">
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div *ngIf="isSubmitted && signupForm.controls.password.errors && signupForm.controls.password.errors.required"
+          class="error">
+          Password is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="password-confirmation" class="col-sm-3 col-form-label">
+        Password Confirmation
+      </label>
+      <div class="col-sm-5">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fas fa fa-user"></i></div>
+          </div>
+          <input [ngClass]="{'is-invalid': isSubmitted && signupForm.controls.password_confirmation.errors}"
+            formControlName="password_confirmation" type="password" class="form-control" id="password_confirmation"
+            placeholder="Confirm Password">
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div *ngIf="isSubmitted && signupForm.controls.password_confirmation.errors && signupForm.controls.password_confirmation.errors.required"
+          class="error">
+          Password Confirmation is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group footer">
+      <div style="float:right;">
+        <button type="button" class="btn btn-primary float-button" (click)="navigateToLogin()">Already having an Account</button>&nbsp;
+        <button type="submit" class="btn btn-primary float-button" (click)="signup()">Sign Up</button>
+      </div>
+    </div>
+  </fieldset>
+</form>

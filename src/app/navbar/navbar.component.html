@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-sm navbar-light navbar-dark fixed-top bg-primary justify-content-between">
+    <div>
+        <span class="navbar-brand" href="/news-feeds" style="margin-right:20px;">News-Feeds</span>
+        <span>
+            <a class="custom-menu" [routerLink]="['/news-feeds']">Home</a>
+            <span class="custom-menu"> | </span>
+            <a class="custom-menu" [routerLink]="['/friends/suggested-friends']">Friends</a>
+            <span class="custom-menu"> | </span>
+            <a class="custom-menu" [routerLink]="['/create-post']">Post</a>
+            <span class="custom-menu"> | </span>
+            <a class="custom-menu" [routerLink]="['/create-image']">Image</a>
+        </span>
+    </div>
+
+    <div class="profile justify-content-end">
+        <button class="btn btn-warning" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+    </div>
+
+</nav>
+<div class="nav-container">
+    <router-outlet>
+    </router-outlet>
+</div>
