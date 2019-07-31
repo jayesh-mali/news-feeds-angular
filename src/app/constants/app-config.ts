@@ -1,4 +1,4 @@
-export const apiEndPoint = 'http://localhost:3000';
+export const apiEndPoint = 'https://my-news-feed-apis.herokuapp.com/';
 
 export const loginAPI = apiEndPoint+'/auth/sign_in';
 
